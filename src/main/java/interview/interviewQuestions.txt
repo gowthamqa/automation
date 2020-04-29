@@ -1,0 +1,12 @@
+ChargeBee:
+1. Difference between Usecase and Testcase?
+Ans: Usecase: A use case captures business and user requirements related to system functions—that is, how the users interact with the system. The goal of a use case is to help the development team understand precisely what the users will expect the system to do.
+     Testcase: Test cases are used to validate that the requirements have been met. The quality assurance analyst will probably want to test the system thoroughly by setting up an individual test case for each path described in a use case. At a minimum, they would set up separate test cases for the "happy path," each alternative path, and each exception path. There would probably also be multiple test cases for the happy path—one for each situation that would cause different business rules to be invoked.
+2. Difference between PUT and PATCH?
+Ans: PUT = replace the ENTIRE RESOURCE with the new representation provided (Modifies full)
+     PATCH = replace parts of the source resource with the values provided AND|OR other parts of the resource are updated that you havent provided (timestamps) AND|OR updating the resource effects other resources (relationships)
+3. What is query param?
+Header parameters: Parameters included in the request header, usually related to authorization.
+Path parameters: Parameters within the path of the endpoint, before the query string (?). These are usually set off within curly braces.
+Query string parameters: Parameters in the query string of the endpoint, after the ?.
+Request body parameters: Parameters included in the request body. Usually submitted as JSON.

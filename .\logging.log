@@ -1,0 +1,14 @@
+2019-12-24-main--INFO -utilities.SyncUtils:[[ChromeDriver: chrome on MAC (b488dcf5f560ab22ad673368a390f895)] -> xpath: //button[text()='Sign in']] identified to click
+2019-12-24-main--INFO -utilities.SyncUtils:[[ChromeDriver: chrome on MAC (0fd95dbbff5fc92cfd423bef300d9fab)] -> xpath: //button[text()='Sign in']] identified to click
+2019-12-24-main--INFO -utilities.SyncUtils:[[ChromeDriver: chrome on MAC (87303d33526ee522fdcad40f77a25371)] -> xpath: //button[text()='Sign in']] identified to click
+2019-12-24-main--INFO -utilities.SyncUtils:[[ChromeDriver: chrome on MAC (e686bb6bcade11353fd18911d51d999e)] -> xpath: //button[text()='Sign in']] identified to click
+2020-01-23-main--INFO -utilities.SyncUtils:[[ChromeDriver: chrome on MAC (191178cded316be5a212836ad50a7519)] -> xpath: //button[text()='Sign in']] identified to click
+2020-01-27-main--INFO -utilities.SyncUtils:[[ChromeDriver: chrome on MAC (96ac425c1eb5a912ceb7ef506a96c5c1)] -> xpath: //select[@class='ui-datepicker-month']] identified to click
+2020-01-27-main--INFO -utilities.SyncUtils:[[ChromeDriver: chrome on MAC (560db559b0c4bc434f9fb92f7738f78d)] -> xpath: //select[@class='ui-datepicker-month']] identified to click
+2020-01-27-main--INFO -utilities.SyncUtils:[[ChromeDriver: chrome on MAC (e13c74866c0fb5b92c4c2a28fa621dc0)] -> xpath: //select[@class='ui-datepicker-month']] identified to click
+2020-01-27-main--INFO -utilities.SyncUtils:[[ChromeDriver: chrome on MAC (4720539d21c4c83e8dab29af22cc560e)] -> xpath: //select[@class='ui-datepicker-month']] identified to click
+2020-01-27-main--INFO -utilities.SyncUtils:[[ChromeDriver: chrome on MAC (4720539d21c4c83e8dab29af22cc560e)] -> xpath: //select[@class='ui-datepicker-month']] identified to click
+2020-01-27-main--INFO -utilities.SyncUtils:[[ChromeDriver: chrome on MAC (d2f735eceb547f677f0fa7e785063deb)] -> xpath: //select[@class='ui-datepicker-month']] identified to click
+2020-01-27-main--INFO -utilities.SyncUtils:[[ChromeDriver: chrome on MAC (d2f735eceb547f677f0fa7e785063deb)] -> xpath: //select[@class='ui-datepicker-month']] identified to click
+2020-01-27-main--INFO -utilities.SyncUtils:[[ChromeDriver: chrome on MAC (4fadd513e3ba82182f72a3a0c420302b)] -> xpath: //select[@class='ui-datepicker-month']] identified to click
+2020-01-27-main--INFO -utilities.SyncUtils:[[ChromeDriver: chrome on MAC (4fadd513e3ba82182f72a3a0c420302b)] -> xpath: //select[@class='ui-datepicker-month']] identified to click

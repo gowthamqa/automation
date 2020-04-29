@@ -1,0 +1,1078 @@
+package interview;
+
+public class JavaLogics {
+    //Fibonacci Series in Java without using recursion
+    class FibonacciExample1{
+        public static void main(String args[])
+        {
+            int n1=0,n2=1,n3,i,count=10;
+            System.out.print(n1+" "+n2);//printing 0 and 1
+
+            for(i=2;i<count;++i)//loop starts from 2 because 0 and 1 are already printed
+            {
+                n3=n1+n2;
+                System.out.print(" "+n3);
+                n1=n2;
+                n2=n3;
+            }
+
+        }}
+
+    //Fibonacci Series using recursion in java
+    class FibonacciExample2{
+        static int n1=0,n2=1,n3=0;
+        static void printFibonacci(int count){
+            if(count>0){
+                n3 = n1 + n2;
+                n1 = n2;
+                n2 = n3;
+                System.out.print(" "+n3);
+                printFibonacci(count-1);
+            }
+        }
+        public static void main(String args[]){
+            int count=10;
+            System.out.print(n1+" "+n2);//printing 0 and 1
+            printFibonacci(count-2);//n-2 because 2 numbers are already printed
+        }
+    }  //0 1 1 2 3 5 8 13 21 34
+
+=================================================================
+        =================================================================
+
+    //Prime Number Program in Java
+    public class PrimeExample{
+        public static void main(String args[]){
+            int i,m=0,flag=0;
+            int n=3;//it is the number to be checked
+            m=n/2;
+            if(n==0||n==1){
+                System.out.println(n+" is not prime number");
+            }else{
+                for(i=2;i<=m;i++){
+                    if(n%i==0){
+                        System.out.println(n+" is not prime number");
+                        flag=1;
+                        break;
+                    }
+                }
+                if(flag==0)  { System.out.println(n+" is prime number"); }
+            }//end of else
+        }
+    }   //3 is prime number
+
+    //Prime Number Program using Method in Java
+    public class PrimeExample2{
+        static void checkPrime(int n){
+            int i,m=0,flag=0;
+            m=n/2;
+            if(n==0||n==1){
+                System.out.println(n+" is not prime number");
+            }else{
+                for(i=2;i<=m;i++){
+                    if(n%i==0){
+                        System.out.println(n+" is not prime number");
+                        flag=1;
+                        break;
+                    }
+                }
+                if(flag==0)  { System.out.println(n+" is prime number"); }
+            }//end of else
+        }
+        public static void main(String args[]){
+            checkPrime(1);
+            checkPrime(3);
+            checkPrime(17);
+            checkPrime(20);
+        }
+    }
+//1 is not prime number
+//3 is prime number
+//17 is prime number
+//20 is not prime number
+
+//Prime Number Program in Java (Another way)
+import java.util.Scanner;
+
+    public class PrimeExample3 {
+
+        public static void main(String[] args) {
+            Scanner s = new Scanner(System.in);
+            System.out.print("Enter a number : ");
+            int n = s.nextInt();
+            if (isPrime(n)) {
+                System.out.println(n + " is a prime number");
+            } else {
+                System.out.println(n + " is not a prime number");
+            }
+        }
+
+        public static boolean isPrime(int n) {
+            if (n <= 1) {
+                return false;
+            }
+            for (int i = 2; i < Math.sqrt(n); i++) {
+                if (n % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+//Find prime numbers between two numbers
+import java.util.Scanner;
+    public class PrimeExample4 {
+        public static void main(String[] args) {
+            Scanner s = new Scanner(System.in);
+            System.out.print("Enter the first number : ");
+            int start = s.nextInt();
+            System.out.print("Enter the second number : ");
+            int end = s.nextInt();
+            System.out.println("List of prime numbers between " + start + " and " + end);
+            for (int i = start; i <= end; i++) {
+                if (isPrime(i)) {
+                    System.out.println(i);
+                }
+            }
+        }
+        public static boolean isPrime(int n) {
+            if (n <= 1) {
+                return false;
+            }
+            for (int i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+=================================================================
+        =================================================================
+    //Palindrome Program in Java
+    class PalindromeExample{
+        public static void main(String args[]){
+            int r,sum=0,temp;
+            int n=454;//It is the number variable to be checked for palindrome
+
+            temp=n;
+            while(n>0){
+                r=n%10;  //getting remainder
+                sum=(sum*10)+r;
+                n=n/10;
+            }
+            if(temp==sum)
+                System.out.println("palindrome number ");
+            else
+                System.out.println("not palindrome");
+        }
+    }   //palindrome  number
+
+//Palindrome Program in Java (Another way)
+import java.util.*;
+    class PalindromeExample2
+    {
+        public static void main(String args[])
+        {
+            String original, reverse = ""; // Objects of String class
+            Scanner in = new Scanner(System.in);
+            System.out.println("Enter a string/number to check if it is a palindrome");
+            original = in.nextLine();
+            int length = original.length();
+            for ( int i = length - 1; i >= 0; i-- )
+                reverse = reverse + original.charAt(i);
+            if (original.equals(reverse))
+                System.out.println("Entered string/number is a palindrome.");
+            else
+                System.out.println("Entered string/number isn't a palindrome.");
+        }
+    }
+
+=================================================================
+        =================================================================
+    //Factorial Program in Java
+    class FactorialExample{
+        public static void main(String args[]){
+            int i,fact=1;
+            int number=5;//It is the number to calculate factorial
+            for(i=1;i<=number;i++){
+                fact=fact*i;
+            }
+            System.out.println("Factorial of "+number+" is: "+fact);
+        }
+    }  //Factorial of 5 is: 120
+
+    //Factorial Program using recursion in java
+    class FactorialExample2{
+        static int factorial(int n){
+            if (n == 0)
+                return 1;
+            else
+                return(n * factorial(n-1));
+        }
+        public static void main(String args[]){
+            int i,fact=1;
+            int number=4;//It is the number to calculate factorial
+            fact = factorial(number);
+            System.out.println("Factorial of "+number+" is: "+fact);
+        }
+    }  //Factorial of 4 is: 24
+
+=================================================================
+        =================================================================
+    //Armstrong Number in Java
+    class ArmstrongExample{
+        public static void main(String[] args)  {
+            int c=0,a,temp;
+            int n=153;//It is the number to check armstrong
+            temp=n;
+            while(n>0)
+            {
+                a=n%10;
+                n=n/10;
+                c=c+(a*a*a);
+            }
+            if(temp==c)
+                System.out.println("armstrong number");
+            else
+                System.out.println("Not armstrong number");
+        }
+    }  //armstrong number
+
+=================================================================
+        =================================================================
+//Find The Sum Of All Digits Of A Number
+
+    public class MainClass
+    {
+        static void sumOfAllDigits(int inputNumber)
+        {
+            //Creating a copy of input number
+
+            int copyOfInputNumber = inputNumber;
+
+            //Initializing sum to 0
+
+            int sum = 0;
+
+            while (copyOfInputNumber != 0)
+            {
+                //Getting last digit of the input number
+
+                int lastDigit = copyOfInputNumber%10;
+
+                //Adding last digit to sum
+
+                sum = sum + lastDigit;
+
+                //Removing last digit from the input number
+
+                copyOfInputNumber = copyOfInputNumber/10;
+            }
+
+            //Printing sum
+
+            System.out.println("Sum Of All Digits In "+inputNumber+" = "+sum);
+        }
+
+        public static void main(String[] args)
+        {
+            sumOfAllDigits(47862);
+
+            sumOfAllDigits(416872);
+
+            sumOfAllDigits(5674283);
+
+            sumOfAllDigits(475496215);
+        }
+    }
+
+=================================================================
+        =================================================================
+//Java Program to find Third Largest Number in an Array
+
+    public class ThirdLargestInArrayExample{
+        public static int getThirdLargest(int[] a, int total){
+            int temp;
+            for (int i = 0; i < total; i++)
+            {
+                for (int j = i + 1; j < total; j++)
+                {
+                    if (a[i] > a[j])
+                    {
+                        temp = a[i];
+                        a[i] = a[j];
+                        a[j] = temp;
+                    }
+                }
+            }
+            return a[total-3];
+        }
+        public static void main(String args[]){
+            int a[]={1,2,5,6,3,2};
+            int b[]={44,66,99,77,33,22,55};
+            System.out.println("Third Largest: "+getThirdLargest(a,6));
+            System.out.println("Third Largest: "+getThirdLargest(b,7));
+        }}
+//Third Largest:3
+//Third Largest:66
+
+
+//Find 3rd Largest Number in Array using Arrays
+import java.util.*;
+    public class ThirdLargestInArrayExample1{
+        public static int getThirdLargest(int[] a, int total){
+            Arrays.sort(a);
+            return a[total-3];
+        }
+        public static void main(String args[]){
+            int a[]={1,2,5,6,3,2};
+            int b[]={44,66,99,77,33,22,55};
+            System.out.println("Third Largest: "+getThirdLargest(a,6));
+            System.out.println("Third Largest: "+getThirdLargest(b,7));
+        }}
+
+
+//Find 3rd Largest Number in Array using Collections
+import java.util.*;
+    public class ThirdLargestInArrayExample2{
+        public static int getThirdLargest(Integer[] a, int total){
+            List<Integer> list=Arrays.asList(a);
+            Collections.sort(list);
+            int element=list.get(total-3);
+            return element;
+        }
+        public static void main(String args[]){
+            Integer a[]={1,2,5,6,3,2};
+            Integer b[]={44,66,99,77,33,22,55};
+            System.out.println("Third Largest: "+getThirdLargest(a,6));
+            System.out.println("Third Largest: "+getThirdLargest(b,7));
+        }}
+
+
+    // Find Second Largest Number In An Integer Array
+    public class MainClass
+    {
+        static int secondLargest(int[] input)
+        {
+            int firstLargest, secondLargest;
+
+            //Checking first two elements of input array
+
+            if(input[0] > input[1])
+            {
+                //If first element is greater than second element
+
+                firstLargest = input[0];
+
+                secondLargest = input[1];
+            }
+            else
+            {
+                //If second element is greater than first element
+
+                firstLargest = input[1];
+
+                secondLargest = input[0];
+            }
+
+            //Checking remaining elements of input array
+
+            for (int i = 2; i < input.length; i++)
+            {
+                if(input[i] > firstLargest)
+                {
+                    //If element at 'i' is greater than 'firstLargest'
+
+                    secondLargest = firstLargest;
+
+                    firstLargest = input[i];
+                }
+                else if (input[i] < firstLargest && input[i] > secondLargest)
+                {
+                    //If element at 'i' is smaller than 'firstLargest' and greater than 'secondLargest'
+
+                    secondLargest = input[i];
+                }
+            }
+
+            return secondLargest;
+        }
+
+        public static void main(String[] args)
+        {
+            System.out.println(secondLargest(new int[] {45, 51, 28, 75, 49, 42}));
+
+            System.out.println(secondLargest(new int[] {985, 521, 975, 831, 479, 861}));
+
+            System.out.println(secondLargest(new int[] {9459, 9575, 5692, 1305, 1942, 9012}));
+
+            System.out.println(secondLargest(new int[] {47498, 14526, 74562, 42681, 75283, 45796}));
+        }
+    }
+=================================================================
+        =================================================================
+
+    //Java Program to remove duplicate element in an Array
+//Remove Duplicate Element in Array using Temporary Array
+    public class RemoveDuplicateInArrayExample{
+        public static int removeDuplicateElements(int arr[], int n){
+            if (n==0 || n==1){
+                return n;
+            }
+            int[] temp = new int[n];
+            int j = 0;
+            for (int i=0; i<n-1; i++){
+                if (arr[i] != arr[i+1]){
+                    temp[j++] = arr[i];
+                }
+            }
+            temp[j++] = arr[n-1];
+            // Changing original array
+            for (int i=0; i<j; i++){
+                arr[i] = temp[i];
+            }
+            return j;
+        }
+
+        public static void main (String[] args) {
+            int arr[] = {10,20,20,30,30,40,50,50};
+            int length = arr.length;
+            length = removeDuplicateElements(arr, length);
+            //printing array elements
+            for (int i=0; i<length; i++)
+                System.out.print(arr[i]+" ");
+        }
+    } //10 20 30 40 50
+
+    //Remove Duplicate Element in Array using separate index
+    public class RemoveDuplicateInArrayExample2{
+        public static int removeDuplicateElements(int arr[], int n){
+            if (n==0 || n==1){
+                return n;
+            }
+            int j = 0;//for next element
+            for (int i=0; i < n-1; i++){
+                if (arr[i] != arr[i+1]){
+                    arr[j++] = arr[i];
+                }
+            }
+            arr[j++] = arr[n-1];
+            return j;
+        }
+
+        public static void main (String[] args) {
+            int arr[] = {10,20,20,30,30,40,50,50};
+            int length = arr.length;
+            length = removeDuplicateElements(arr, length);
+            //printing array elements
+            for (int i=0; i<length; i++)
+                System.out.print(arr[i]+" ");
+        }
+    }
+
+//Remove Duplicate Elements in Unsorted Array
+import java.util.Arrays;
+    public class RemoveDuplicateInArrayExample3{
+        public static int removeDuplicateElements(int arr[], int n){
+            if (n==0 || n==1){
+                return n;
+            }
+            int[] temp = new int[n];
+            int j = 0;
+            for (int i=0; i<n-1; i++){
+                if (arr[i] != arr[i+1]){
+                    temp[j++] = arr[i];
+                }
+            }
+            temp[j++] = arr[n-1];
+            // Changing original array
+            for (int i=0; i<j; i++){
+                arr[i] = temp[i];
+            }
+            return j;
+        }
+
+        public static void main (String[] args) {
+            int arr[] = {10,70,30,90,20,20,30,40,70,50};//unsorted array
+            Arrays.sort(arr);//sorting array
+            int length = arr.length;
+            length = removeDuplicateElements(arr, length);
+            //printing array elements
+            for (int i=0; i<length; i++)
+                System.out.print(arr[i]+" ");
+        }
+    }
+
+=================================================================
+        =================================================================
+    //Find Duplicate Elements In An Array
+    public class DuplicatesInArray
+    {
+        public static void main(String[] args)
+        {
+            String[] strArray = {"abc", "def", "mno", "xyz", "pqr", "xyz", "def"};
+
+            for (int i = 0; i < strArray.length-1; i++)
+            {
+                for (int j = i+1; j < strArray.length; j++)
+                {
+                    if( (strArray[i].equals(strArray[j])) && (i != j) )
+                    {
+                        System.out.println("Duplicate Element is : "+strArray[j]);
+                    }
+                }
+            }
+        }
+    }
+
+
+//Find Duplicate Elements In An Array Using HashSet :
+import java.util.HashSet;
+
+    public class DuplicatesInArray
+    {
+        public static void main(String[] args)
+        {
+            String[] strArray = {"abc", "def", "mno", "xyz", "pqr", "xyz", "def"};
+
+            HashSet<String> set = new HashSet<String>();
+
+            for (String arrayElement : strArray)
+            {
+                if(!set.add(arrayElement)) // returns zero if already presents
+                {
+                    System.out.println("Duplicate Element is : "+arrayElement);
+                }
+            }
+        }
+    }
+=================================================================
+        =================================================================
+    //Find Duplicate Characters In A String
+    class DuplicateCharactersInString
+    {
+        static void duplicateCharCount(String inputString)
+        {
+            //Creating a HashMap containing char as key and it's occurrences as value
+
+            HashMap<Character, Integer> charCountMap = new HashMap<Character, Integer>();
+
+            //Converting given string to char array
+
+            char[] strArray = inputString.toCharArray();
+
+            //checking each char of strArray
+
+            for (char c : strArray)
+            {
+                if(charCountMap.containsKey(c))
+                {
+                    //If char is present in charCountMap, incrementing it's count by 1
+
+                    charCountMap.put(c, charCountMap.get(c)+1);
+                }
+                else
+                {
+                    //If char is not present in charCountMap,
+                    //putting this char to charCountMap with 1 as it's value
+
+                    charCountMap.put(c, 1);
+                }
+            }
+
+            //Getting a Set containing all keys of charCountMap
+
+            Set<Character> charsInString = charCountMap.keySet();
+
+            System.out.println("Duplicate Characters In "+inputString);
+
+            //Iterating through Set 'charsInString'
+
+            for (Character ch : charsInString)
+            {
+                if(charCountMap.get(ch) > 1)
+                {
+                    //If any char has a count of more than 1, printing it's count
+
+                    System.out.println(ch +" : "+ charCountMap.get(ch));
+                }
+            }
+        }
+
+        public static void main(String[] args)
+        {
+            duplicateCharCount("JavaJ2EE");
+
+            duplicateCharCount("Fresh Fish");
+
+            duplicateCharCount("Better Butter");
+        }
+    }
+
+    Output :
+    Duplicate Characters In JavaJ2EE
+    E : 2
+    a : 2
+    J : 2
+    Duplicate Characters In Fresh Fish
+    F : 2
+    s : 2
+    h : 2
+    Duplicate Characters In Better Butter
+    t : 4
+    e : 3
+    r : 2
+    B : 2
+            =================================================================
+            =================================================================
+    //Find Occurrences Of Each Character In String
+    class EachCharCountInString
+    {
+        static void characterCount(String inputString)
+        {
+            //Creating a HashMap containing char as a key and occurrences as  a value
+
+            HashMap<Character, Integer> charCountMap = new HashMap<Character, Integer>();
+
+            //Converting given string to char array
+
+            char[] strArray = inputString.toCharArray();
+
+            //checking each char of strArray
+
+            for (char c : strArray)
+            {
+                if(charCountMap.containsKey(c))
+                {
+                    //If char is present in charCountMap, incrementing it's count by 1
+
+                    charCountMap.put(c, charCountMap.get(c)+1);
+                }
+                else
+                {
+                    //If char is not present in charCountMap,
+                    //putting this char to charCountMap with 1 as it's value
+
+                    charCountMap.put(c, 1);
+                }
+            }
+
+            //Printing the charCountMap
+
+            System.out.println(charCountMap);
+        }
+
+        public static void main(String[] args)
+        {
+            characterCount("Java J2EE Java JSP J2EE");
+
+            characterCount("All Is Well");
+
+            characterCount("Done And Gone");
+        }
+    }
+    Output :
+    {E=4, 2=2, v=2, =4, P=1, S=1, a=4, J=5}
+    {W=1, =2, e=1, s=1, A=1, l=4, I=1}
+    {D=1, d=1, =2, G=1, e=2, A=1, n=3, o=2}
+=================================================================
+        =================================================================
+    //Java Program to print Odd and Even Numbers from an Array
+    public class OddEvenInArrayExample{
+        public static void main(String args[]){
+            int a[]={1,2,5,6,3,2};
+            System.out.println("Odd Numbers:");
+            for(int i=0;i<a.length;i++){
+                if(a[i]%2!=0){
+                    System.out.println(a[i]);
+                }
+            }
+            System.out.println("Even Numbers:");
+            for(int i=0;i<a.length;i++){
+                if(a[i]%2==0){
+                    System.out.println(a[i]);
+                }
+            }
+        }}
+
+    //Output
+    Odd Numbers:
+            1
+            5
+            3
+    Even Numbers:
+            2
+            6
+            2
+            =================================================================
+            =================================================================
+// CONVERT STRING TO INTEGER
+            package MyPackagee;
+    public class MyStringToNumber {
+
+        public static int convert_String_To_Number(String numStr){
+
+            char ch[] = numStr.toCharArray();
+            int sum = 0;
+            //get ascii value for zero
+            int zeroAscii = (int)'0';
+            for(char c:ch){
+                int tmpAscii = (int)c;
+                sum = (sum*10)+(tmpAscii-zeroAscii);
+            }
+            return sum;
+        }
+
+        public static void main(String a[]){
+
+            System.out.println("\"3256\" == "+convert_String_To_Number("3256"));
+            System.out.println("\"76289\" == "+convert_String_To_Number("76289"));
+            System.out.println("\"90087\" == "+convert_String_To_Number("90087"));
+        }
+    }
+
+
+    int to String
+    //public static String valueOf(int i)
+//public static String toString(int i)
+    String s=String.format("%d",10);
+
+    String to int
+    int i=Integer.parseInt("200");
+    Integer i=Integer.valueOf(s);
+=================================================================
+        =================================================================
+// EXTRACT DIGITS FROM STRING CONSISTS OF ALPHA NUMERIC
+
+    // regular expression
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+
+        String str=" ab21c45w";
+        Pattern p = Pattern.compile("(\\d+)");
+        Matcher m = p.matcher(str);
+        while(m.find())
+        {
+            System.out.print(m.group(1));
+        }
+    }
+=================================================================
+        =================================================================
+    //Shifting characters in a string to the left
+    String cyclicLeftShift(String s, int k) {
+
+        String result = s.substring(k);
+
+        for (int i = 0; i < k; i++) {
+
+            result += s.charAt(i);
+
+        }
+
+        return result;
+
+    }
+=================================================================
+        =================================================================
+//check if strings are rotations of each other or not
+
+    public static boolean checkRotatation(String original, String rotation)
+    { if(original.length() != rotation.length())
+    { return false; }
+        String concatenated =original + original;
+        if (concatenated.indexOf(rotation) != -1)
+        { return true; }
+        return false; }
+}
+
+=================================================================
+        =================================================================
+//Check Whether Two Strings Are Anagram Or Not?
+static void isAnagram(String s1, String s2)
+        {
+        //Removing white spaces from s1 and s2 and changing case to lower
+
+        String copyOfs1 = s1.replaceAll("\\s", "").toLowerCase();
+
+        String copyOfs2 = s2.replaceAll("\\s", "").toLowerCase();
+
+        //Initially setting status as true
+
+        boolean status = true;
+
+        if(copyOfs1.length() != copyOfs2.length())
+        {
+        //Setting status as false if copyOfs1 and copyOfs2 doesn't have same length
+
+        status = false;
+        }
+        else
+        {
+        //Converting copyOfs1 to char array
+
+        char[] s1ToArray = copyOfs1.toCharArray();
+
+        //Checking whether each character of s1ToArray is present in copyOfs2
+
+        for (char c : s1ToArray)
+        {
+        int index = copyOfs2.indexOf(c);
+
+        if(index != -1)
+        {
+        //If character is present in copyOfs2, removing that char from copyOfs2
+
+        copyOfs2 = copyOfs2.substring(0, index)+copyOfs2.substring(index+1, copyOfs2.length());
+        }
+        else
+        {
+        //If character is not present in copyOfs2, setting status as false and breaking the loop
+
+        status = false;
+
+        break;
+        }
+        }
+        }
+
+        //Output
+
+        if(status)
+        {
+        System.out.println(s1+" and "+s2+" are anagrams");
+        }
+        else
+        {
+        System.out.println(s1+" and "+s2+" are not anagrams");
+        }
+        }
+        =================================================================
+        =================================================================
+//Find All Pairs Of Elements In An Array Whose Sum Is Equal To A Given Number
+public class PairsOfElementsInArray
+{
+    static void findThePairs(int inputArray[], int inputNumber)
+    {
+        //Sorting the given array
+
+        Arrays.sort(inputArray);
+
+        System.out.println("Pairs of elements whose sum is "+inputNumber+" are : ");
+
+        //Initializing i to first index
+
+        int i = 0;
+
+        //Initializing j to last index
+
+        int j = inputArray.length-1;
+
+        //Till i crosses j, perform the following task
+
+        while (i < j)
+        {
+            //If inputArray[i]+inputArray[j] is equal to inputNumber
+
+            if(inputArray[i]+inputArray[j] == inputNumber)
+            {
+                //then Print inputArray[i] and inputArray[j]
+
+                System.out.println(inputArray[i]+" + "+inputArray[j]+" = "+inputNumber);
+
+                //Increment i
+
+                i++;
+
+                //Decrement j
+
+                j--;
+            }
+
+            //If inputArray[i]+inputArray[j] is smaller than inputNumber
+
+            else if (inputArray[i]+inputArray[j] < inputNumber)
+            {
+                //then increment i
+
+                i++;
+            }
+
+            //If inputArray[i]+inputArray[j] is greater than inputNumber
+
+            else if (inputArray[i]+inputArray[j] > inputNumber)
+            {
+                //then decrement j
+
+                j--;
+            }
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        findThePairs(new int[] {4, 6, 5, -10, 8, 5, 20}, 10);
+
+        findThePairs(new int[] {4, -5, 9, 11, 25, 13, 12, 8}, 20);
+
+        findThePairs(new int[] {12, 13, 10, 15, 8, 40, -15}, 25);
+
+        findThePairs(new int[] {12, 23, 10, 41, 15, 38, 27}, 50);
+    }
+}
+Output :
+
+        Pairs of elements whose sum is 10 are :
+        -10 + 20 = 10
+        4 + 6 = 10
+        5 + 5 = 10
+        Pairs of elements whose sum is 20 are :
+        -5 + 25 = 20
+        8 + 12 = 20
+        9 + 11 = 20
+        Pairs of elements whose sum is 25 are :
+        -15 + 40 = 25
+        10 + 15 = 25
+        12 + 13 = 25
+        Pairs of elements whose sum is 50 are :
+        12 + 38 = 50
+        23 + 27 = 50
+        =================================================================
+        =================================================================
+//Find Continuous Sub Array In Array Whose Sum Is Equal To Number
+public class SubArrayWhoseSumIsNumber
+{
+    static void findSubArray(int[] inputArray, int inputNumber)
+    {
+        //Initializing sum with the first element of the inputArray
+
+        int sum = inputArray[0];
+
+        //Initializing starting point with 0
+
+        int start = 0;
+
+        //Iterating through inputArray starting from second element
+
+        for (int i = 1; i < inputArray.length; i++)
+        {
+            //Adding inputArray[i] to the current 'sum'
+
+            sum = sum + inputArray[i];
+
+            //If sum is greater than inputNumber then following loop is executed until
+
+            //sum becomes either smaller than or equal to inputNumber
+
+            while(sum > inputNumber && start <= i-1)
+            {
+                //Removing starting elements from the 'sum'
+
+                sum = sum - inputArray[start];
+
+                //Incrementing start by 1
+
+                start++;
+            }
+
+            //If 'sum' is equal to 'inputNumber' then printing the sub array
+
+            if(sum == inputNumber)
+            {
+                System.out.println("Continuous sub array of "+Arrays.toString(inputArray)+" whose sum is "+inputNumber+" is ");
+
+                for (int j = start; j <= i; j++)
+                {
+                    System.out.print(inputArray[j]+" ");
+                }
+
+                System.out.println();
+            }
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        findSubArray(new int[]{42, 15, 12, 8, 6, 32}, 26);
+
+        findSubArray(new int[]{12, 5, 31, 13, 21, 8}, 49);
+
+        findSubArray(new int[]{15, 51, 7, 81, 5, 11, 25}, 41);
+    }
+}
+Output :
+
+        Continuous sub array of [42, 15, 12, 8, 6, 32] whose sum is 26 is
+        12 8 6
+        Continuous sub array of [12, 5, 31, 13, 21, 8] whose sum is 49 is
+        5 31 13
+        Continuous sub array of [15, 51, 7, 81, 5, 11, 25] whose sum is 41 is
+        5 11 25
+
+//Find Continuous Sub Array Whose Sum Is Equal To Number :
+
+public class SubArrayWhoseSumIsNumber
+{
+    static void findSubArray(int[] inputArray, int inputNumber)
+    {
+        //Initializing 'sum' to 0
+
+        int sum = 0;
+
+        //Iterating through 'inputArray'
+
+        for (int i = 0; i < inputArray.length; i++)
+        {
+            //Assigning inputArray[i] to 'sum'
+
+            sum = inputArray[i];
+
+            for (int j = i+1; j < inputArray.length; j++)
+            {
+                //Adding inputArray[j] to 'sum'
+
+                sum = sum + inputArray[j];
+
+                //If 'sum' is equal to 'inputNumber' then printing the sub array
+
+                if(sum == inputNumber)
+                {
+                    System.out.println("Continuous sub array of "+Arrays.toString(inputArray)+" whose sum is "+inputNumber+" is ");
+
+                    for (int k = i; k <= j; k++)
+                    {
+                        System.out.print(inputArray[k]+" ");
+                    }
+
+                    System.out.println();
+                }
+
+                //if 'sum' is smaller than 'inputNumber', continue the loop
+
+                else if (sum < inputNumber)
+                {
+                    continue;
+                }
+
+                //if 'sum' is greater than 'inputNumber', then break the loop
+
+                else if (sum > inputNumber)
+                {
+                    break;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        findSubArray(new int[]{42, 15, 12, 8, 6, 32}, 26);
+
+        findSubArray(new int[]{12, 5, 31, 13, 21, 8}, 49);
+
+        findSubArray(new int[]{15, 51, 7, 81, 5, 11, 25}, 41);
+    }
+}
+}

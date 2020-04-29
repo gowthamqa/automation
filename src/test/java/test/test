@@ -1,0 +1,21 @@
+db.accountFormFieldData.update({
+ "value.accountId": 440165
+ }, {
+ $set: {
+   "value.connect_integrations": [{
+       "type": {
+         "id": 8974894,
+         "key": "7506",
+         "value": "Integration EDI"
+       },
+       "is_enabled": true,
+       "active": true,
+       "deleted": false,
+       "id": "57eb270a-f25c-44db-9c44-69a12654943d",
+       "createdOn": new ISODate(),
+       "lastUpdatedOn": new ISODate()
+     }
+   ],
+   "value.edi_enabled": true
+ }
+ })

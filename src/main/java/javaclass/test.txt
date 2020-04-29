@@ -1,0 +1,108 @@
+
+//Logical Operators
+        int age = 40;
+        age >= 13 & age <= 19 & age > 80 F & T ==> False & true ==> False
+        T & F ==> False
+        And Gate
+        cond1 cond2 Result
+        True   True True
+        True   False False
+        False  True  False
+        False  False False
+
+        &&
+        age >= 19 && age <=19 F  False
+         T && F ==> False
+
+         OR Operator:
+                 cond1 cond2  Result
+                 True   True  True
+                 True   False True
+                 False  True  True
+                 False  False False
+          age = 16
+          age >= 13 | age <= 10  T | F Result : True
+          age >= 13 || age <= 10 T Result : True
+
+         XOR ^
+                cond1 cond2 Result
+                 True   True True
+                 True   False False
+                 False  True  False
+                 False  False True
+
+          Conditional operator:
+          condition ? true : false
+          age = 16
+          age > 18 ? "Adult " : "child "
+
+          new Operator:
+          used to create an object. Object creation means allocating memory for class in heap.
+
+          Dot (.) operator:
+          User to access variables and methods
+          Task:
+          Write a progam to tell given number is Even or Odd?
+          int number =13;
+          Even
+          Odd
+
+          14 ==>
+                     int rollnum = 1;
+                     if(rollnum < 1) {
+                      "Gowtham"
+                     }else if (rollnum == 2){
+                       "kalyan"
+                     }eelsee if(rollnum == 3){
+                     "threee"
+                    }
+                    .
+                    .
+                    .
+                    .
+                    eelsee if(rollnum == 10){
+                               "Ten"
+                    }
+                    else{
+                     "No student"
+                    }
+
+          Switch Statement:
+
+          switch (argument) {
+           case labe1 : statement1;
+            break;
+            case label2: stateement2;
+            break;
+            .
+            .
+            .
+            .
+            .
+            default: deefault statement;
+          }
+
+          int rollNum = 12;
+          switch (rollNum) {
+            case 1 : "One"
+                      break;
+             case 2 : "Two"
+                      break;
+            case 3 : "Three"
+                      break;
+            .
+            .
+            .
+            .
+            .
+
+            .
+            ..
+            .
+            default: "No student"
+            }
+
+
+
+
+

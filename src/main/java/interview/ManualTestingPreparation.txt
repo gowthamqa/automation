@@ -1,0 +1,44 @@
+about my responsibilties 
+automation exp framework
+test metric
+testNG 
+ReportNG
+ExtentManager
+using XML tags for testNg execution
+Agile menthodoloogy SCRUM
+Maven
+Java patterns
+Collections
+
+test plan test strategy
+Test case??
+Sanity testing regression testing
+
+Screenshot code
+waits code
+
+read write from file
+read write from excel
+System.setProperty("webdriver.chrome.driver","C:\\selenium-java-3.0.1\\chromedriver.exe");
+
+how to read string from Stdin
+how to read array from Stdin
+
+
+
+
+
+Test plan :
+A document describing the scope, approach, resources and schedule of intended test activities. 
+It identifies amongst others test items, the features to be tested, the testing tasks, 
+who will do each task, degree of tester independence, the test environment, 
+the test design techniques and entry and exit criteria to be used, and the rationale for their choice,
+and any risks requiring contingency planning. It is a record of the test planning process.
+
+List the test items (software/products) and their versions , Features to be Tested , Features Not to Be Tested, 
+Approach(Manual/Automated; White Box/Black Box/Gray Box), Item Pass/Fail Criteria, 
+Suspension Criteria and Resumption Requirements, 
+Test Deliverables(Test Plan (this document itself),Test Cases,Test Scripts,Defect/Enhancement Logs,Test Reports), 
+Test Environment, Estimate, Schedule, Staffing and Training Needs, Responsibilities, Risks, 
+Assumptions and Dependencies, Approvals.
+

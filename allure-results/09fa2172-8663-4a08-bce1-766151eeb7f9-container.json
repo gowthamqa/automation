@@ -1,0 +1,1 @@
+{"uuid":"09fa2172-8663-4a08-bce1-766151eeb7f9","name":"test.mobile.ios.TestCase","children":["799e5d9a-e4d9-4c88-adeb-9ff91eb9ab91"],"befores":[{"name":"capabilities","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1580200140000,"stop":1580200355549}],"afters":[],"links":[],"start":1580200139686,"stop":1580200462789}

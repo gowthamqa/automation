@@ -1,0 +1,121 @@
+TestNG Listeners :
+
+we will implement the ITestListener.
+
+ITestListener interface has following methods
+
+OnStart- OnStart method is called when any Test starts.
+onTestSuccess- onTestSuccess method is called on the success of any Test.
+onTestFailure- onTestFailure method is called on the failure of any Test.
+onTestSkipped- onTestSkipped method is called on skipped of any Test.
+onTestFailedButWithinSuccessPercentage- method is called each time Test fails but is within success percentage.
+onFinish- onFinish method is called after all Tests are executed.
+
+
+
+package Listener_Demo;		
+
+import org.testng.ITestContext;		
+import org.testng.ITestListener;		
+import org.testng.ITestResult;		
+
+public class ListenerTest implements ITestListener{						
+// public class ListenerTest extends TestListenerAdapter{
+
+    @Override		
+    public void onFinish(ITestContext Result) 					
+    {		
+                		
+    }		
+
+    @Override		
+    public void onStart(ITestContext Result)					
+    {		
+            		
+    }		
+
+    @Override		
+    public void onTestFailedButWithinSuccessPercentage(ITestResult Result)					
+    {		
+    		
+    }		
+
+    // When Test case get failed, this method is called.		
+    @Override		
+    public void onTestFailure(ITestResult Result) 					
+    {		
+    System.out.println("The name of the testcase failed is :"+Result.getName());					
+    }		
+
+    // When Test case get Skipped, this method is called.		
+    @Override		
+    public void onTestSkipped(ITestResult Result)					
+    {		
+    System.out.println("The name of the testcase Skipped is :"+Result.getName());					
+    }		
+
+    // When Test case get Started, this method is called.		
+    @Override		
+    public void onTestStart(ITestResult Result)					
+    {		
+    System.out.println(Result.getName()+" test case started");					
+    }		
+
+    // When Test case get passed, this method is called.		
+    @Override		
+    public void onTestSuccess(ITestResult Result)					
+    {		
+    System.out.println("The name of the testcase passed is :"+Result.getName());					
+    }		
+
+}	
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+package Listener_Demo;		
+
+import org.openqa.selenium.By;		
+import org.openqa.selenium.WebDriver;		
+import org.openqa.selenium.firefox.FirefoxDriver;		
+import org.testng.Assert;		
+import org.testng.annotations.Listeners;		
+import org.testng.annotations.Test;             		
+
+@Listeners(Listener_Demo.ListenerTest.class)			
+
+public class TestCases {				
+WebDriver driver= new FirefoxDriver();					
+
+//Test to pass as to verify listeners.		
+@Test		
+public void Login()				
+{		
+    driver.get("http://demo.guru99.com/V4/");					
+    driver.findElement(By.name("uid")).sendKeys("mngr34926");							
+    driver.findElement(By.name("password")).sendKeys("amUpenu");							
+    driver.findElement(By.id("")).click();					
+}		
+
+//Forcefully failed this test as verify listener.		
+@Test		
+public void TestToFail()				
+{		
+    System.out.println("This method to test fail");					
+    Assert.assertTrue(false);			
+}		
+}		
+
+
+******* SUITE LEVEL ********
+Use of Listener for multiple classes.
+If project has multiple classes adding Listeners to each one of them could be cumbersome and error prone.
+
+In such cases, we can create a testng.xml and add listeners tag in XML.
+
+<suite name="SuiteNameHere">
+<listeners>
+<listener class-name="Listener_Demo.ListenerTest">
+</listeners>
+.....
+This listener is implemented throughout the test suite irrespective of the number of classes you have. When you run this XML file, listeners will work on all classes mentioned. You can also declare any number of listener class.

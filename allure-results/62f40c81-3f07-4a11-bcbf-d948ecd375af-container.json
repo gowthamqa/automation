@@ -1,0 +1,1 @@
+{"uuid":"62f40c81-3f07-4a11-bcbf-d948ecd375af","name":"test.web.pract.TestWebpractice","children":["0b9d38c8-ff50-49be-a5f3-62b253a61c6c"],"befores":[{"name":"init","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1580127799298,"stop":1580127799431}],"afters":[],"links":[],"start":1580127799287,"stop":1580127812369}

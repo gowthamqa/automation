@@ -1,0 +1,1395 @@
+https://www.journaldev.com/2366/core-java-interview-questions-and-answers
+https://www.javatpoint.com/corejava-interview-questions
+https://www.edureka.co/blog/interview-questions/java-interview-questions/
+https://www.pearsonfrank.com/blog/85-core-java-interviews-questions/
+https://www.tutorialspoint.com/java/java_interview_questions.htm
+https://beginnersbook.com/2013/05/java-interview-questions/
+
+https://www.javatpoint.com/java-programs
+http://javaconceptoftheday.com/java-interview-programs-with-solutions/
+
+
+
+
+
+classes and interfaces themselves can have only two access specifiers when declared outside any other class.
+1) public
+2) default (when no access specifier is specified)
+private and protected can not be used with class. java class can only have public or default access modifier
+we can use private for inner class.
+
+
+protected //1.same package 2. or diff package where class should be sub class of our required variable containing class (subsiding class)
+default // same package
+public // anywhere
+private // same class
+
+OOPS concepts : https://www.journaldev.com/12496/oops-concepts-java-example
+static keyword : https://www.journaldev.com/1365/static-keyword-in-java
+
+-->super() is added in each class constructor automatically by compiler if there is no super() or this().
+-->Outer classes cannot be static, but nested/inner classes can be.
+-->Interface is a blueprint of a class that have static constants(means public static final ) and abstract methods.
+-->Starting with Java 8, default and static methods may have implementation in the interfacedefinition.
+-->Starting with Java 9, Private methods in Interfaces
+-->abstract class can have constructor/static methods/instance variables.
+-->When a class is declared as final,it cannot be subclassed. Example String,Integer and other wrapper classes.
+-->abstract class can’t be declared as Final.
+-->a variable can’t be static as well as local at the same time. Defining a local variable as static gives compilation error.
+-->A static method can access only static variables of class and invoke only static methods of the class.
+-->Java static block is the group of statements that gets executed when the class is loaded into memory by Java ClassLoader.
+-->Static methods can’t be overridden in any class while any methods in an interface are by default abstract and are supposed to be implemented in the classes being implementing the interface. So it makes no sense to have static methods in an interface in Java.
+-->we can’t change the value of any variable of an interface in the implementing class as all variables defined in the interface are by default public, static and Final and final variables are like constants which can’t be changed later.
+-->Marker interface : an empty interface (no field or methods). Examples of marker interface are Serializable, Clonnable and Remote interface
+-->Stack memory contains local variables e.g. primitive int and boolean variables, method frames and call stack
+   and reference variables to objects in heap space.
+-->Whenever an object is created, it’s always stored in the Heap space.
+-->HashMap.Entry is a nested static class, whereby HashMap is a top-level class and Entry is a nested static class.
+
+//Removing white spaces from string:
+string.replaceAll("\\s","");
+
+
+Java8:
+-->Interface Changes – static method, default method added
+-->Lambda expressions
+--> @FunctionalInterface (interface with exactly one abstract method. Ex: java.lang.Runnable, java.lang.Comparable, java.awt.ActionListener,java.util.Predicate,BinaryOperator,Function )
+--> Collection API and Concurrency API and Java IO improvements
+--> Java Stream API for Bulk Data Operations on Collections
+--> forEach() method in Iterable interface
+
+Java9:
+-->JShell
+-->Try With Resources Improvement (to manage resources automatically)
+-->Factory Methods added for Immutable List, Set, Map and Map.Entry
+-->Private methods in Interfaces (https://www.journaldev.com/12850/java-9-private-methods-interfaces)
+-->Java 9 Module System (Modular JDK,Modular Java Source Code,Modular Run-time Images,Encapsulate Java Internal APIs,Java Platform Module System)
+-->Reactive Streams,Stream API Improvements
+-->GC (Garbage Collector) Improvements
+
+
+Java10:
+-->Local-Variable Type Inference : you can use var for local variables. var fileReader = new FileReader(fileName);
+-->Enhance java.util.Locale and related APIs to implement additional Unicode extensions of BCP 47 language tags.
+-->Enable the HotSpot VM to allocate the Java object heap on an alternative memory device.
+
+=======================================================
+=======================================================
+
+Different ways of implementing thread:
+-->Using runnable interface
+-->Inheriting from the Thread class.
+The use of the Runnable interface is more advantageous because when going for multiple inheritances, the only interface can help.
+
+Default vs Protected access specifiers:
+The protected specifier allows access by all subclasses of the class in question, whatever package they reside in, as well as to other code in the same package.
+The default specifier allows access by other code in the same package, but not by code that is in subclasses residing in different packages.
+
+StringBuffer methods are synchronized while StringBuilder is not synchronized.
+
+JIT compiles parts of the bytecode that has similar functionality which in turn reduces the amount of time needed for compilation.
+
+Method hiding:
+You can not override a private or static method in Java,
+if you create a similar method with same return type and same method arguments in child class then it will hide the superclass method, this is known as method hiding.
+Similarly, you cannot override a private method in sub class because it's not accessible there, what you do is create another private method with the same name in the child class.
+
+Comparable interface is used to define the  natural order of object while Comparator is used to define custom order.
+
+packages available in java:
+java.lang. java.io,java.util
+
+Interesting :
+public interface WebElement extends SearchContext, TakesScreenshot
+=======================================================
+System.setProperty("webdriver.firefox.marionette","C:\\geckodriver.exe");
+System.setProperty ("webdriver.chrome.driver",".\\chromedriver.exe" );
+System.setProperty("webdriver.ie.driver","driver path\\IEDriverServer.exe");
+
+WebDriver nested Interfaces are :
+WebDriver.ImeHandler : An interface for managing input methods.
+WebDriver.Navigation : navigation methods
+WebDriver.Options : An interface for managing stuff you would do in a browser menu
+WebDriver.TargetLocator : Used to locate a given frame or window.
+WebDriver.Timeouts : An interface for managing timeout behavior for WebDriver instances.
+WebDriver.Window
+=======================================================
+System.out.println( getClass().getSimpleName()); // This wil print class name
+System.out.println( Thread.currentThread().getId()); // This will print thread id that is executing
+
+sysout explenation:
+System is a class in the java.lang package. out is a static member of the System class, and is an instance of java.io.PrintStream . println is a method of java.io.PrintStream . This method is overloaded to print message to output destination, which is typically a console or file.
+
+System class is final so that we can’t subclass and override it’s behavior through inheritance.
+System class doesn’t provide any public constructors, so we can’t instantiate this class and that’s why all of it’s methods are static.
+=======================================================
+p s v main() explenation:
+1. public- Here public is an access specifier which allows the main method to be accessble everywhere.
+2. static- static helps main method to get loaded without getting alled by any instance/object.
+3. void- void clarifies that the main method will not return any value.
+4. main- It's the name of the method.
+5. String[] args- Here we are defining a String array to pass arguments at command line. args is the variable name of the String array. It can be changed to anything such as String [] a.
+
+
+Overload main method:
+Yes, main method can be overloaded. Overloaded main method has to be called from inside the "public static void main(String args[])" as
+this is the entry point when the class is launched by the JVM.
+
+Override main method:
+We can not override the static method because static metod is a class method and the scope of this method within the same class itself.
+Hence, it does not makes sense to "override" it (or for that matter any static method).
+The concept of "overriding" is only for instance methods.
+
+Overloading:
+Frames(String);
+Frame(Integer);
+Frame(WebElement);
+Overriding:
+Explained for Different types of Browser launching
+
+Constructor :
+A constructor in Java can not be abstract, final, static and Synchronized.
+Access modifiers can be used in constructor declaration to control its access i.e which other class can call the constructor.
+=======================================================
+Exception Handling:
+
+
+												java.lang.Object
+												      |
+												      |
+												   Throwable
+								        /				    \
+					             /             \
+					          Error			      Exception
+					          								/         \
+					          							 /	         \
+					          	Checked exceptions     Unchecked Exceptions
+
+Checked Exception:
+The classes that extend Throwable class except RuntimeException and Error are known as checked exceptions.
+Checked exceptions are checked at compile-time.
+Example: IOException, SQLException, FileNotFoundExpection, ClassNotFoundException etc.
+Unchecked Exception:
+The classes that extend RuntimeException are known as unchecked exceptions.
+Unchecked exceptions are not checked at compile-time.
+Example: ArithmeticException, NullPointerException etc. and all WebDriverException
+
+Error :
+StackOverflowError,OutOfMemoryError,IOError, ThreadDeath, VirtualMachineError
+
+--> Below methods can be used to display Exception information:
+printStackTrace(): prints the stack trace , exception name and description.
+toString(): returns a text message describing the exception name and description.
+getMessage(): displays the description of exception
+
+throw keyword	VS throws keyword
+Throw is used to explicitly throw an exception.           ||	Throws is used to declare an exception.
+throw can not be used to propagate exceptions.	          || Checked exception can be propagated with throws.
+Throw is followed by an instance.	                        || Throws is followed by class.
+Throw is used within the method.	                        || Throws is used with the method signature.
+You can't throw multiple exceptions || You can declare multiple exception e.g. public void method()throws IOException,SQLException.
+
+
+Exceptions in Selenium : all are unchecked exceptions
+WebDriverException is parent for all WebDriver related exceptions. which extends RunTimeException
+ex:
+--> StaleElementReferenceException, TimeoutException, ElementNotVisibleException, InvalidElementStateException
+--> NotFoundException extends WebDriverException :
+ ex : NoAlertPresentException, NoSuchContextException, NoSuchElementException, NoSuchFrameException, NoSuchWindowException
+=======================================================
+Collections :
+List: ArrayList, LinkedList, Vector,Stack
+Set: HashSet, LinkedHashSet, TreeSet
+Map: HashMap, LinkedHashMap, TreeMap , HashTable
+
+Array List is not synchronized. is fast as it’s non-synchronized. Array List can only use Iterator for traversing an Array List.
+Vector is synchronized. is slow as it is thread safe. Except Hashtable, Vector is the only other class which uses both Enumeration and Iterator.
+Hashtable is synchronised, HashMap is not synchronised
+
+Hashtable doesn't allow null key or values but HashMap allows null values and one null key.
+HashSet is implemented using HashMap
+
+https://javarevisited.blogspot.com/2011/12/how-to-traverse-or-loop-hashmap-in-java.html
+=======================================================
+Locators :
+ID //driver.findElement(By.id("toolbar"));
+Name //driver.findElement(By.name("admin"));
+Tag //driver.findElements(By.tagName("results"));
+Attribute
+CSS //driver.findElements(By.cssSelector("input[id=email']"));
+Linktext //driver.findElement(By.linkText("Downloads"));
+PartialLink Text //driver.findElement(By.partialLinkText("Download"));
+Xpath  //driver.findElement(By.xpath("//element[@attribute='value']"));
+class Name //driver.findElement(By.className(“sample”));
+
+=======================================================
+xpath codes:
+Absolute XPath and relative xpath
+//*[contains(@name,'btn')]
+//*[@type='submit' OR @name='btnReset']
+//input[@type='submit' AND @name='btnLogin']
+//label[starts-with(@id,'message')]
+//td[text()='UserID']
+//*[@type='text']//following::input[1]
+//*[text()='Enterprise Testing']//ancestor::div[1]
+//*[@id='java_technologies']/child::li[1]
+//*[@type='submit']//preceding::input[1]
+//*[@type='submit']//following-sibling::input
+//*[@id='rt-feature']//parent::div[1]
+//*[@type='password']//self::input
+//*[@id='rt-feature']//descendant::a[1]   //under the node.. child node , grandchild node, etc
+=======================================================
+JavascriptExecutor is an Interface which is available in package org.openqa.selenium.JavascriptExecutor;
+JavascriptExecutor je = (JavascriptExecutor) driver;
+
+// now execute query which actually will scroll until that element is appeared on page.
+je.executeScript("arguments[0].scrollIntoView(true);",element);
+
+//How to type in Selenium without using sendKeys() method
+((JavascriptExecutor)driver).executeScript("document.getElementById('some id').value='mukesh';");
+
+//clicking on element using js
+((JavascriptExecutor)driver).executeScript("document.getElementById('enter your element id').click();");
+
+//uncheck checkbox
+((JavascriptExecutor)driver).executeScript("document.getElementById('enter element id').checked=false;");
+
+((JavascriptExecutor)driver).executeScript("arguments[0].click();", new Object[]{webElement});
+
+//Higlight the webelement
+public static void highLightElement(WebDriver driver, WebElement element){
+JavascriptExecutor js=(JavascriptExecutor)driver;
+js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
+try {Thread.sleep(500);}
+catch (InterruptedException e) {System.out.println(e.getMessage());}
+js.executeScript("arguments[0].setAttribute('style','border: solid 2px white');", element); }
+=======================================================
+Implicit wait:
+driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+Explicit wait:
+WebDriverWait wait = new WebDriverWait(driver, 10);
+WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("someid")));
+
+Fluent wait:
+Wait wait = new FluentWait(driver)
+.withTimeout(timeout, SECONDS)
+.pollingEvery(timeout, SECONDS)
+.ignoring(Exception.class);
+
+WebElement clickseleniumlink = wait.until(new Function<Webdriver, WebElement>(){
+
+		public WebElement apply(WebDriver driver ) {
+			return driver.findElement(By.xpath("//id"));
+		}
+	});
+
+
+wait till page does not change for some time:
+public void waitForJavascriptToLoad(int maxWaitMilliSecs,int pollDelimiter)
+{
+double startTime = System.currentTimeMillis();
+while (System.currentTimeMillis() < startTime +maxWaitMillis)
+{
+try{
+String prevState = driver.getPageSource();
+Thread.sleep(pollDelimiter);
+if(prevState.equals(driver.getPageSource())){
+return;
+}
+catch(Exception e){
+}
+}
+}
+
+
+wait till Browser stops loading page icon:
+JavascriptExecutor js = (JavascriptExecutor)driver;
+  //Initially bellow given if condition will check ready state of page.
+  if (js.executeScript("return document.readyState").toString().equals("complete")){
+   System.out.println("Page Is loaded.");
+   return;
+  }
+
+Wait till AJAX call is over :
+
+public static void untilJqueryIsDone(WebDriver driver, Long timeoutInSeconds){
+	until(driver, (d) -> //Predicates
+		{
+		Boolean isJqueryCallDone = (Boolean)((JavascriptExecutor) driver).executeScript("return jQuery.active==0");
+		if (!isJqueryCallDone) System.out.println("JQuery call is in Progress");
+		return isJqueryCallDone;
+		}, timeoutInSeconds);
+}
+
+	private static void until(WebDriver driver, Function<WebDriver, Boolean> waitCondition, Long timeoutInSeconds){
+		WebDriverWait webDriverWait = new WebDriverWait(driver, timeoutInSeconds);
+		webDriverWait.withTimeout(timeoutInSeconds, TimeUnit.SECONDS);
+		try{
+			webDriverWait.until(waitCondition);
+		}catch (Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+
+=======================================================
+Dropdown: Select class
+WebElement month_dropdown=driver.findElement(By.id("month"));
+Select month=new Select(month_dropdown);
+month.selectByVisibleText("Aug");
+or
+month.selectByValue("3"); // value attribute
+or
+month.selectByIndex(5); // index starts from 1
+or
+List<WebElement> dropdown=month.getOptions();
+
+WebElement first_value=month.getFirstSelectedOption(); //Get Selected option from Dropdown
+
+
+// Maximize browser
+driver.manage().window().maximize();
+
+// refresh
+driver.navigate().refersh();
+// other Navigate Interface public methods
+driver.navigate().to("http://www.DemoQA.com");
+driver.navigate().forward();
+driver.navigate().back();
+
+// add cookie
+	Cookie name = new Cookie("mycookie", "123456789123");
+	driver.manage().addCookie(name);
+//get all cookies
+	Set<Cookie> cookiesList =  driver.manage().getCookies();
+// delete cookie
+	driver.manage().deleteCookieNamed(arg0);
+	driver.manage().deleteAllCookies();
+// Get all the cookies for the current domain
+	driver.manage().getCookies();
+
+
+Window handling:
+String parent=driver.getWindowHandle();//Return a string of alphanumeric window handle
+Set<String>s1=driver.getWindowHandles();//Return a set of window handles
+Iterator<String> I1= s1.iterator();
+ while(I1.hasNext())
+{  String child_window=I1.next();
+if(!parent.equals(child_window))
+{
+driver.switchTo().window(child_window);
+System.out.println(driver.switchTo().window(child_window).getTitle());
+driver.close();
+}
+}
+// once all pop up closed now switch to parent window
+driver.switchTo().window(parent);
+
+
+frame handling:
+driver.switchTo().frame(“framename”);
+or
+driver.switchTo().frame(indexnumber);
+
+//switch back to default content
+driver.switchTo().defaultContent();
+
+// no of iframes in page
+int size = driver.findElements(By.tagName("iframe")).size();
+
+Ex: Handling multiple/nested frames
+public static void main(String[] args) {
+	    WebDriver driver = new FirefoxDriver();
+	    driver.get("http://demo.guru99.com/test/guru99home/");
+	    driver.manage().window().maximize();
+	    //driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+	    int size = driver.findElements(By.tagName("iframe")).size();
+
+	    for(int i=0; i<=size; i++){
+		driver.switchTo().frame(i);
+		int total=driver.findElements(By.xpath("html/body/a/img")).size();
+		System.out.println(total);
+	    driver.switchTo().defaultContent();}}
+
+Wherever you find the '1' in output that is the index of Frame by which the element is being loaded
+Since the index of the iframe starts with '0' if you find the 1 in the 1stplace, then the index is 0.
+If you find 1 in 3rd place, the index is 2.
+
+=======================================================
+Alert handling: SwitchTo PopUp Command
+//Alert interface provides the below few methods
+
+
+Alert alert = driver.switchTo().alert();
+alert.accept();
+
+or
+
+driver.switchTo().alert().accept();
+driver.switchTo().alert().dismiss();
+driver.switchTo().alert().getText();
+driver.switchTo().alert().sendKeys("Text");
+//If alert in not present in the window and still we try to switchTo alert window then Selenium will throw NoAlertPresentException
+=======================================================
+Assert:
+Assert.assertEqual(String actual,String expected);
+Assert.assertEqual(String actual,String expected, String message) : Asserts that two Strings are equal. If they are not, an AssertionError, with the given message, is thrown.
+Assert.assertEquals(boolean actual,boolean expected) : Asserts that two booleans are equal. If they are not, an AssertionError is thrown.
+Assert.assertTrue(condition) : Asserts that a condition is true. If it isn’t, an AssertionError is thrown.
+Assert.assertTrue(condition, message) :  Asserts that a condition is true. If it isn’t, an AssertionError, with the given message, is thrown.
+Assert.assertFalse(condition) :  Asserts that a condition is false. If it isn’t, an AssertionError is thrown.
+Assert.assertFalse(condition, message) : Asserts that a condition is false. If it isn’t, an AssertionError, with the given message, is thrown.
+
+Soft Asserts:
+ SoftAssert softAssertion= new SoftAssert();
+ softAssertion.assertTrue(false);
+ softAssertion.assertAll(); //If we forget to call assertAll() at the end of your test, the test will pass even if any assert objects threw exceptions
+
+=======================================================
+Rest automation:
+
+// Specify the base URL to the RESTful web service
+		RestAssured.baseURI = "http://restapi.demoqa.com/utilities/weather/city";
+
+// Get the RequestSpecification of the request that you want to sent
+// to the server. The server is specified by the BaseURI that we have
+// specified in the above step.
+RequestSpecification httpRequest = RestAssured.given();
+
+// Make a request to the server by specifying the method Type and the method URL.
+// This will return the Response from the server. Store the response in a variable.
+Response response = httpRequest.request(Method.GET, "/Hyderabad");
+
+//print the body of the message to see what response is recieved from the server
+String responseBody = response.getBody().asString();
+System.out.println("Response Body is =>  " + responseBody);
+
+
+Example2: get
+@Test
+public void exampleJsonPathTest() {
+  Response res = get("/service/example");
+  assertEquals(200, res.getStatusCode());
+  String json = res.asString();
+  JsonPath jp = new JsonPath(json);
+  assertEquals("onur@swtestacademy", jp.get("email"));
+  assertEquals("Onur", jp.get("firstName"));
+  assertEquals("Baskirt", jp.get("lastName"));
+}
+
+// diff status codes : Success 2xx   , Error 4xx & 5xx ,  Redirection 3xx
+=======================================================
+
+
+JDBC connection:
+
+Driver class: The driver class for the mysql database is com.mysql.jdbc.Driver.
+Connection URL: The connection URL for the mysql database is jdbc:mysql://localhost:3306/sonoo
+where jdbc is the API, mysql is the database, localhost is the server name on which mysql is running,
+we may also use IP address, 3306 is the port number and sonoo is the database name.
+We may use any database, in such case, you need to replace the sonoo with your database name.
+
+import java.sql.*;
+class MysqlCon{
+public static void main(String args[]){
+try{
+Class.forName("com.mysql.jdbc.Driver");
+Connection con=DriverManager.getConnection(
+"jdbc:mysql://localhost:3306/sonoo","root","root");
+//here sonoo is database name, root is username and password
+Statement stmt=con.createStatement();
+ResultSet rs=stmt.executeQuery("select * from emp");
+while(rs.next())
+System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));
+con.close();
+}catch(Exception e){ System.out.println(e);}
+}
+}
+
+or
+
+stmt.executeUpdate("delete from table_name where firstname='"+"Jai'");
+
+=======================================================
+//Robot class
+Robot robot = new Robot();
+
+robot.keyPress(KeyEvent.VK_ENTER);
+robot.keyRelease(KeyEvent.VK_ENTER);
+
+// Press CTRL+V
+robot.keyPress(KeyEvent.VK_CONTROL);
+robot.keyPress(KeyEvent.VK_V);
+robot.keyRelease(KeyEvent.VK_CONTROL);
+robot.keyRelease(KeyEvent.VK_V);
+
+
+// Specify the file location with extension
+StringSelection sel = new StringSelection("C:\\Users\\Desktop\\1.doc");
+//used for copy and paste operations on Unicode text strings
+
+// Copy to clipboard
+Toolkit.getDefaultToolkit().getSystemClipboard().setContents(sel,null);
+System.out.println("selection" +sel);
+
+=======================================================
+Actions and Action class
+
+org.openqa.selenium.interactions.Actions
+
+
+// Configure the Action
+Actions builder = new Actions(driver);
+
+// To focus on element using webdriver
+builder .moveToElement(element).perform();
+
+// To click on the element to focus
+builder.moveToElement(element).click().perform();
+
+Perform method is used here to execute the action. The sequence of actions should be minimal.
+There are 2 types of actions: Keyboard and Mouse actions.
+
+moveToElement(WebElement)-- Mouse Hover
+contextClick()-- Right click on page
+contextClick(WebElement)-- Right click on specific Element
+sendKeys(KEYS.TAB)--For keyboard events
+clickAndHold(WebElement)--Click on element and hold until next operation
+release() Release the current control
+
+
+Actions act=new Actions(driver);
+// find element which we need to drag
+WebElement drag=driver.findElement(By.xpath(".//*[@id='draggable']"));
+// find element which we need to drop
+WebElement drop=driver.findElement(By.xpath(".//*[@id='droppable']"));
+// this will drag element to destination
+act.dragAndDrop(drag, drop).build().perform();
+
+//For this we will use previous example after right click we will select second option from list for this we will use ARROW_DOWN key two times then we will hit ENTER Key.
+act.contextClick(driver.findElement(By.linkText("Gujarati"))).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+
+=======================================================
+screenshot code:
+File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+FileUtils.copyFile(scrFile, new File("D:\\screenshot.png"));
+
+Full  length Screenshot using Robot class :
+Use :When running cross browser testing if need to verify that test is running on which browser then you won’t be able to verify because it capture only web view part.
+// This code will capture screenshot of current screen
+BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+// This will store screenshot on Specific location
+ImageIO.write(image, "png", new File("C:\\Screenshot\\CurrentScreenshot.png"));
+=======================================================
+maven:
+project object model (POM)
+Maven has its own repository where it keeps all plugin, jars etc. in commonplace in .m2 repository.
+groupId: Generally groupId refers to domain id. For best practices company name is used as groupId. It identifies the project uniquely.
+artifactId: It is basically the name of the Jar without version.
+
+Build Life Cycle:
+Basic maven phases are used as below.
+--> clean: deletes all artifacts and targets which are created already.
+--> compile: used to compile the source code of the project.
+--> test: test the compiled code and these tests do not require to be packaged or deployed.
+--> package: package is used to convert your project into a jar or war etc.
+--> install: install the package into the local repository for use of another project.
+
+Selenium :
+<groupId>org.seleniumhq.selenium</groupId>
+<artifactId>selenium-java</artifactId>
+
+testng :
+<groupId>org.testng</groupId>
+<artifactId>testng</artifactId>
+
+
+Cucumber Java :
+<groupId>info.cukes</groupId>
+<artifactId>cucumber-java</artifactId>
+
+Cucumber JVM Repackaged Dependencies :
+<groupId>info.cukes</groupId>
+<artifactId>cucumber-jvm-deps</artifactId>
+
+Cucumber JVM JUnit :
+<groupId>info.cukes</groupId>
+<artifactId>cucumber-junit</artifactId>
+
+<groupId>com.relevantcodes</groupId>
+<artifactId>extentreports</artifactId>
+=======================================================
+listeners:
+=======================================================
+read inputs from stdin
+
+// Create object of Scanner class to accept values
+Scanner scan=new Scanner(System.in);
+
+String str1=scan.next();// string
+
+String username = scan.nextLine();// line
+
+int testNum = scan.nextInt(); // integer
+or
+int testNum = Integer.parseInt(scan.nextLine().trim());
+
+how to read array of values
+=======================================================
+Excel reading and writing:
+Apache POI
+HSSF (Horrible SpreadSheet Format) and XSSF (XML SpreadSheet Format)
+
+public class SimpleExcelReaderExample {
+
+	public static void main(String[] args) throws IOException {
+		String excelFilePath = "Books.xlsx";
+		FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
+
+		Workbook workbook = new XSSFWorkbook(inputStream);
+		Sheet firstSheet = workbook.getSheetAt(0);
+		Iterator<Row> iterator = firstSheet.iterator();
+
+		while (iterator.hasNext()) {
+			Row nextRow = iterator.next();
+			Iterator<Cell> cellIterator = nextRow.cellIterator();
+
+			while (cellIterator.hasNext()) {
+				Cell cell = cellIterator.next();
+
+				switch (cell.getCellType()) {
+					case Cell.CELL_TYPE_STRING:
+						System.out.print(cell.getStringCellValue());
+						break;
+					case Cell.CELL_TYPE_BOOLEAN:
+						System.out.print(cell.getBooleanCellValue());
+						break;
+					case Cell.CELL_TYPE_NUMERIC:
+						System.out.print(cell.getNumericCellValue());
+						break;
+				}
+				System.out.print(" - ");
+			}
+			System.out.println();
+		}
+
+		workbook.close();
+		inputStream.close();
+	}
+
+}
+
+
+==== OR ====
+
+System.out.println(sh1.getRow(0).getCell(0).getStringCellValue());
+
+ System.out.println(sh1.getRow(0).getCell(1).getStringCellValue());
+
+ System.out.println(sh1.getRow(1).getCell(0).getStringCellValue());
+
+ System.out.println(sh1.getRow(1).getCell(1).getStringCellValue());
+
+ System.out.println(sh1.getRow(2).getCell(0).getStringCellValue());
+
+ System.out.println(sh1.getRow(2).getCell(1).getStringCellValue());
+
+// here createCell will create column
+
+// and setCellvalue will set the value
+
+ sh1.getRow(0).createCell(2).setCellValue("2.41.0");
+
+ sh1.getRow(1).createCell(2).setCellValue("2.5");
+
+ sh1.getRow(2).createCell(2).setCellValue("2.39");
+
+
+// here we need to specify where you want to save file
+
+ FileOutputStream fout=new FileOutputStream(new File("location of file/filename.xlsx"));
+
+
+// finally write content
+
+ wb.write(fout);
+
+// close the file
+
+ fout.close();
+=======================================================
+JSON file reading and writing:
+
+// Java program for write JSON to a file
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+public class JSONWriteExample
+{
+    public static void main(String[] args) throws FileNotFoundException
+    {
+        // creating JSONObject
+        JSONObject jo = new JSONObject();
+
+        // putting data to JSONObject
+        jo.put("firstName", "John");
+        jo.put("lastName", "Smith");
+        jo.put("age", 25);
+
+        // for address data, first create LinkedHashMap
+        Map m = new LinkedHashMap(4);
+        m.put("streetAddress", "21 2nd Street");
+        m.put("city", "New York");
+        m.put("state", "NY");
+        m.put("postalCode", 10021);
+
+        // putting address to JSONObject
+        jo.put("address", m);
+
+        // for phone numbers, first create JSONArray
+        JSONArray ja = new JSONArray();
+
+        m = new LinkedHashMap(2);
+        m.put("type", "home");
+        m.put("number", "212 555-1234");
+
+        // adding map to list
+        ja.add(m);
+
+        m = new LinkedHashMap(2);
+        m.put("type", "fax");
+        m.put("number", "212 555-1234");
+
+        // adding map to list
+        ja.add(m);
+
+        // putting phoneNumbers to JSONObject
+        jo.put("phoneNumbers", ja);
+
+        // writing JSON to file:"JSONExample.json" in cwd
+        PrintWriter pw = new PrintWriter("JSONExample.json");
+        pw.write(jo.toJSONString());
+
+        pw.flush();
+        pw.close();
+    }
+}
+
+Output:
+{
+     "lastName":"Smith",
+    "address":{
+        "streetAddress":"21 2nd Street",
+         "city":"New York",
+         "state":"NY",
+         "postalCode":10021
+    },
+     "age":25,
+     "phoneNumbers":[
+            {
+            "type":"home", "number":"212 555-1234"
+            },
+         {
+            "type":"fax", "number":"212 555-1234"
+         }
+     ],
+     "firstName":"John"
+}
+
+
+
+// Java program to read JSON from a file
+
+import java.io.FileReader;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.*;
+
+public class JSONReadExample
+{
+    public static void main(String[] args) throws Exception
+    {
+        // parsing file "JSONExample.json"
+        Object obj = new JSONParser().parse(new FileReader("JSONExample.json"));
+
+        // typecasting obj to JSONObject
+        JSONObject jo = (JSONObject) obj;
+
+        // getting firstName and lastName
+        String firstName = (String) jo.get("firstName");
+        String lastName = (String) jo.get("lastName");
+
+        System.out.println(firstName);
+        System.out.println(lastName);
+
+        // getting age
+        long age = (long) jo.get("age");
+        System.out.println(age);
+
+        // getting address
+        Map address = ((Map)jo.get("address"));
+
+        // iterating address Map
+        Iterator<Map.Entry> itr1 = address.entrySet().iterator();
+        while (itr1.hasNext()) {
+            Map.Entry pair = itr1.next();
+            System.out.println(pair.getKey() + " : " + pair.getValue());
+        }
+
+        // getting phoneNumbers
+        JSONArray ja = (JSONArray) jo.get("phoneNumbers");
+
+        // iterating phoneNumbers
+        Iterator itr2 = ja.iterator();
+
+        while (itr2.hasNext())
+        {
+            itr1 = ((Map) itr2.next()).entrySet().iterator();
+            while (itr1.hasNext()) {
+                Map.Entry pair = itr1.next();
+                System.out.println(pair.getKey() + " : " + pair.getValue());
+            }
+        }
+    }
+}
+
+Output:
+John
+Smith
+25
+streetAddress : 21 2nd Street
+postalCode : 10021
+state : NY
+city : New York
+number : 212 555-1234
+type : home
+number : 212 555-1234
+type : fax
+
+
+=======================================================
+Reading Properties file:
+File file = new File("test.properties");
+			FileInputStream fileInput = new FileInputStream(file);
+			Properties properties = new Properties();
+			properties.load(fileInput);
+			fileInput.close();
+
+			Enumeration enuKeys = properties.keys();
+			while (enuKeys.hasMoreElements()) {
+				String key = (String) enuKeys.nextElement();
+				String value = properties.getProperty(key);
+				System.out.println(key + ": " + value);
+			}
+=======================================================
+Reading and writing notepad :
+// reading
+File file=new File("C:\\Users\\pankaj\\Desktop\\test.java");
+Scanner sc=new Scanner(file);
+while(sc.hasNextLine()){
+System.out.println(sc.nextLine());
+        }
+
+  // writing
+
+PrintWriter out = new PrintWriter("random.txt");
+out.println( printing random number here Math.random());
+out.close();
+
+        or
+
+FileWriter fileWriter = new FileWriter("info.txt")) {
+fileWriter.write("10 ");
+
+=======================================================
+log4j:
+
+create Log4j.properties file and we need to set properties here...
+
+and
+
+in out test case we write like this
+
+// Here we need to create logger instance so we need to pass Class name for
+//which  we want to create log file in my case Google is classname
+Logger logger=Logger.getLogger("Google");
+
+// configure log4j properties file
+PropertyConfigurator.configure("Log4j.properties");
+
+// Open browser
+WebDriver driver = new FirefoxDriver();
+logger.info("Browser Opened");
+
+// Set implicit wait
+driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+logger.info("Implicit wait given");
+
+// Load application
+driver.get("https://www.google.co.in/");
+logger.info("Url opened");
+
+// type Selenium
+driver.findElement(By.name("q")).sendKeys("Selenium");
+logger.info("keyword type");
+
+=======================================================
+
+Sikuli:
+It can identify object-using images/screenshots it means you can capture images for the script and can perform your operations as well depends on your requirement.
+
+// We have to create Screen class object to access method
+Screen screen = new Screen();
+
+// Create object of Pattern class and specify the images path
+Pattern image = new Pattern("C:\\gmail.PNG");
+
+Pattern image1 = new Pattern("C:\\images\\uname.PNG");
+Pattern image2 = new Pattern("C:\\images\\password.PNG");
+Pattern image3 = new Pattern("C:\\images\\click.PNG");
+
+WebDriver driver=new FirefoxDriver();
+driver.manage().window().maximize();
+driver.get("http://www.google.com");
+
+screen.wait(image, 10);
+
+// using screen object we can call click method which will accept image path and will perform //action
+// This will click on gmail image on google home page
+screen.click(image);
+
+// using screen object we can call type  method which will accept image path and content which //we have to type and will perform action.
+// This  will type on username field
+screen.type(image1, "mukeshotwani@gmail.com");
+
+//This will type of password field
+screen.type(image2, "password1");
+
+// This will click on login button
+screen.click(image3);
+=======================================================
+GIT interview questions
+=======================================================
+Agile interview questions
+=======================================================
+Extent reports:
+Refer : https://www.softwaretestingmaterial.com/generate-extent-reports/
+
+ExtentReports extent;
+ExtentTest logger;
+
+extent = new ExtentReports (System.getProperty("user.dir") +"/test-output/STMExtentReport.html", true);
+		//extent.addSystemInfo("Environment","Environment Name")
+		extent
+                .addSystemInfo("Host Name", "SoftwareTestingMaterial")
+                .addSystemInfo("Environment", "Automation Testing")
+                .addSystemInfo("User Name", "Rajkumar SM");
+                //loading the external xml file (i.e., extent-config.xml) which was placed under the base directory
+                //You could find the xml file below. Create xml file in your project and copy past the code mentioned below
+                extent.loadConfig(new File(System.getProperty("user.dir")+"\\extent-config.xml"));
+
+
+logger = extent.startTest("passTest");
+logger.log(LogStatus.PASS, "Test Case Passed is passTest");
+==============
+Cucumber Extent reports :
+http://toolsqa.com/selenium-cucumber-framework/cucumber-extent-report/
+=======================================================
+ReportNG:
+is a pluin for testng to create html report
+project ---> right click --> properties --> Testng -->disable default listeners and
+add the given code to your testng.xml
+
+<listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter" />
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+required jars:
+reportng , velicity dep, google guice which will help to format the text
+=======================================================
+Singleton Class:
+
+public class Singleton
+{
+psvm(S arg[])
+{
+Abc obj1 = Abc.getInstance();
+Abc obj2 = Abc.getInstance();
+//obj2 also wil get same instance.It will not create new object.
+}
+}
+class Abc
+{
+static Abc obj = new Abc();
+// static method returns a obj which is static
+private Abc()
+{// private constructor so that other classes can not call and create obj using constructor
+}
+public static Abc getInstance()
+{// we can give any method name..
+//
+}
+=======================================================
+
+=======================================================
+=======================================================
+=======================================================
+FRAMEWORKS
+=======================================================
+=======================================================
+Pagefactory:
+
+@FindBy(how=How.ID,using="userName")
+private WebElement txtbx_UserName;
+
+@CacheLookup
+//If we don’t do it, then every time when we turn to our element,
+WebDriver will check if the element is present on the page.
+
+Home homePage = new HomePage(driver);
+PageFactory.initElements(driver, homePage);
+or
+HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+or
+public HompePage(WebDriver driver) {
+this.driver = driver;
+PageFactory.initElements(driver, this);
+}
+
+=======================================================
+TestNG
+// running single group
+testng.xml:
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Suite1" parallel="false">
+   <test name = "test1">
+      <groups>
+         <run>
+            <include name = "functest" />
+         </run>
+      </groups>
+      <classes>
+         <class name = "GroupTestExample" />
+      </classes>
+   </test>
+</suite>
+
+// running multiple group
+<suite name="Suite">
+   <test name="Practice Grouping">
+      <groups>
+         <define name="All">
+	   		 <include name="Car"/>
+	   		 <include name="Scooter"/>
+		 </define>
+	 	<run>
+	   		 <include name="All"/>
+		</run>
+   	 </groups>
+	 <classes>
+	      <class name="automationFramework.Grouping" />
+	</classes>
+   </test>
+</suite>
+
+exclude test methods: // it will not be considered for execution
+<suite name="Sample Test Suite" verbose="1" >
+  <test name="Method Test Cases" >
+    <classes>
+       <class name="com.easy.entry.AddTestCase">
+        <methods>
+        <include name="addLocationTestCase" />
+        <include name="addDepartmentTestCase" />
+        <exclude name="addEmployeeTestCase" />
+      </methods>
+       </class>
+    </classes>
+  </test>
+</suite>
+
+
+@Test(enabled="false")
+@Test(expectedExceptions = ArithmeticException.class) //test whether a code throws a desired exception or not
+@Test(groups = { "functest", "checkintest" }) // this test will be executed when we execute those groups
+@Test(dependsOnMethods = { "initEnvironmentTest" })
+@Test(dependsOnGroups = { "init.*" }) // regular expression
+//If a method depended upon fails, and you have a hard dependency on it (alwaysRun=false, which is the default), the methods that depend on it are not marked as FAIL but as SKIP.
+@Parameters("myName")
+<parameter name = "myName" value="jeev"/> // in testng.xml file
+
+Listeners - For implementing a listener class, the class has to implement the org.testng.ITestListener interface.
+These classes are notified at runtime by TestNG when the test starts, finishes, fails, skips, or passes.
+
+Reporters - For implementing a reporting class, the class has to implement an org.testng.IReporter interface.
+These classes are called when the whole suite run ends. The object containing the information of the whole test run is passed to this class when called.
+
+====
+
+Below code will run 5 times:
+
+ @Test(invocationCount=5)
+ public void test1()
+ {
+  System.out.println("Hello");
+  System.out.println(Thread.currentThread().getId());
+ }
+
+====
+@Test(timeOut=1000) // specify time in milliseconds. it is test case completion time
+===
+
+How to find the failed test cases and run only those failed ones:
+when we run the testng.xml(or it can be any xml file) , we see another folder added to out project.
+folder name is suite name that we given in above file. and in that folder , we get 3 files.. 1 html report.. 1 xml report..
+and third one is xml file which contains the failed test cases.
+We can directly right click on this 3rd file and run the failed test cases alone.
+
+Another way is we can do it via programatically.
+
+p s v m (s[] a){
+TestNG runner = new TestNG();
+List<String> list = new ArrayList<String>();
+list.add("C:\\workspace\\projectname\\test-output\\3rdfileThatImentionedInAboveParagraph.xml");
+runner.setTestSuite(list);// .setTestClasses .setTestNames also can be used
+runner.run();
+}
+
+When we execute this program if we have any test cases failed then this program will execute only failed test cases.
+
+====
+
+How we Re run failed test cases automatically:
+We will be using one IRetryAnalyzer interface that is part of TestNG and we need to override retry method.
+import org.testng.IRetryAnalyzer;
+import org.testng.ITestResult;
+// implement IRetryAnalyzer interface
+public class Retry implements IRetryAnalyzer{
+int minretryCount=0;     // set counter to 0
+int maxretryCount=2;      // set maxcounter value this will execute our test 3 times
+
+@Override // override retry Method
+public boolean retry(ITestResult result) {
+// this will run until max count completes if test pass within this frame it will come out of for loop
+if(minretryCount<=maxretryCount) {
+// print the test name for log purpose
+System.out.println("Following test is failing===="+result.getName());
+
+// print the counter value
+System.out.println("Retrying the test Count is=== "+ (minretryCount+1));
+minretryCount++;  // increment counter each time by 1
+return true; }
+return false;
+}}
+
+
+Then
+add below annotation to test that u r executing
+@Test(retryAnalyzer=Retry.class)
+
+====
+DataProvider in TestNG:
+Refer http://www.seleniumeasy.com/testng-tutorials/dataprovider-in-testng
+Ex : write this code in testng class file:
+   @DataProvider(name = "test1") // annotated method must return an Object[][] where each Object[] can be assigned the parameter list of the test method.
+   public static Object[][] primeNumbers() {
+      return new Object[][] {{2, true}, {6, false}, {19, true}, {22, false}, {23, true}};   }
+   // This test will run 5 times since we have 5 parameters defined
+   @Test(dataProvider = "test1")
+   public void testPrimeNumberChecker(Integer inputNumber, Boolean expectedResult) {
+ System.out.println(inputNumber + " " + expectedResult);}
+
+====
+
+The parallel attribute of suite tag can accept four values:
+
+tests:	All the test cases inside <test> tag of Testing xml file will run parallel.
+classes:	All the test cases inside a Java class will run parallel
+methods:	All the methods with @Test annotation will execute parallel.
+instances:	Test cases in same instance will execute parallel but two methods of two different instances will run in different thread.
+
+
+Ex:
+<suite name="Parallel test suite" parallel="classes" thread-count="2">
+  <test name="Test 1">
+    <classes>
+      <class name="com.parallel.TestParallelClassOne"/>
+      <class name="com.parallel.TestParallelClassTwo"/>
+    </classes>
+  </test>
+</suite>
+
+Configure parallel execution of tests using TestNG selenium:
+Refer http://www.seleniumeasy.com/selenium-tutorials/testing-in-multiple-browsers
+
+Parallel Execution of test methods in TestNG
+Refer http://www.seleniumeasy.com/testng-tutorials/parallel-execution-of-test-methods-in-testng
+
+Parallel Execution of Classes in TestNG
+Refer http://www.seleniumeasy.com/testng-tutorials/parallel-execution-of-classes-in-testng
+
+Parallel Execution & Session Handling in Selenium
+Refer https://www.guru99.com/sessions-parallel-run-and-dependency-in-selenium.html
+=======================================================
+=======================================================
+=======================================================
+Cucumber
+
+runnerFile codes and options:
+@RunWith(Cucumber.class)
+@CucumberOptions(
+// name={"GiveAnythingWhichMatchesScenarioName"},
+//tags={"@FeatureTagsOrScenarioTagsHere"},
+features={"src/test/resources"}, // it will pick up all the feature files under this folder for execution
+//features={"@target/rerun.txt"}   if we want to re run the failed scenarios
+,glue={"stepDefinition"}
+,dryRun = true // checks if all the steps hav step def , does not execute code inside it. just checks. if it is there then it pass the step
+plugin = {"pretty", "html:target/cucumber","rerun:target/rerun.txt"
+// this will create report under target folder with name cucumber
+// failed scenarios will be listed in rerun.txt in target folder
+)
+public class TestRunnerClassNameHere {
+}
+
+
+
+tags={"@US123","@US321"} // takes only if both tags there in scenario/feature AND condition
+tags={"@US123,@US321"} // takes if any tag matches to scenario/feature OR condition
+tags={"~US234"} // this tagged features/scenarios will not be considered for execution //negation mark
+
+-------------
+DataTable:
+
+feature :
+	When User enters “testuser_1” and “Test@123”
+code :
+	When("^User enters \"(.*)\" and \"(.*)\"$")
+	public void user_enters_UserName_and_Password(String username, String password) throws Throwable {
+	driver.findElement(By.id("log")).sendKeys(username);
+	driver.findElement(By.id("pwd")).sendKeys(password);
+
+with examples :
+feature :
+Scenario Outline:
+	And User enters "<username>" and "<password>"
+	Then Message displayed Login Successfully
+Examples:
+    | username   | password |
+    | testuser_1 | Test@153 |
+    | testuser_2 | Test@153 |
+
+code :
+@When("^User enters \"(.*)\" and \"(.*)\"$")
+	public void user_enters_UserName_and_Password(String username, String password) throws Throwable {
+		driver.findElement(By.id("log")).sendKeys(username);
+	  driver.findElement(By.id("pwd")).sendKeys(password);
+// this will run twice as we have 2 rows
+
+
+
+//Parameterization without Example Keyword
+feature :
+When User enters Credentials to LogIn
+    | testuser_1 | Test@153 |
+code :
+@When("^User enters Credentials to LogIn$")
+	public void user_enters_testuser__and_Test(DataTable usercredentials) throws Throwable {
+		List<List<String>> data = usercredentials.raw();
+		driver.findElement(By.id("log")).sendKeys(data.get(0).get(0));
+	  driver.findElement(By.id("pwd")).sendKeys(data.get(0).get(1));
+
+or
+
+@When("^I login with following credentials$")
+	public void i_login_with_following_credentials(DataTable dt) {
+		List<String> list = dt.asList(String.class);
+		System.out.println("Username - " + list.get(0));
+		System.out.println("Password - " + list.get(1));
+-------------
+1. Maps in Data Tables with Header
+And User enters Credentials to LogIn
+	| Username   | Password |
+  | testuser_1 | Test@153 |
+code :
+@When("^User enters Credentials to LogIn$")
+	public void user_enters_testuser_and_Test(DataTable usercredentials) throws Throwable {
+		List<Map<String,String>> data = usercredentials.asMaps(String.class,String.class);
+		driver.findElement(By.id("log")).sendKeys(data.get(0).get("Username"));
+	  driver.findElement(By.id("pwd")).sendKeys(data.get(0).get("Password"));
+
+	  or
+	  List<List<String>> data1 = usercredentials.raw();
+	  sysout(data1.get(0).get(0).toString());
+	  sysout(data1.get(0).get(1).toString());
+-------------
+2. Maps in Data Tables with Multiple Test Data
+And User enters Credentials to LogIn
+	| Username   | Password |
+  | testuser_1 | Test@153 |
+  | testuser_2 | Test@154 |
+code :
+@When("^User enters Credentials to LogIn$")
+	public void user_enters_testuser_and_Test(DataTable usercredentials) throws Throwable {
+		for (Map<String, String> data : usercredentials.asMaps(String.class, String.class)) {
+		driver.findElement(By.id("log")).sendKeys(data.get("Username"));
+		driver.findElement(By.id("pwd")).sendKeys(data.get("Password"));
+-------------
+Scenario: Create multiple new accounts in Facebook
+Given I open Facebook URL and create new accounts with below data
+| First Name | Last Name | Phone No   | Password | DOB Day  | DOB Month  | DOB Year  | Gender 	|
+| Abc FN 	 | Abc LN 	 | 0123123123 | Pass1234 | 01 		| Jan 		 | 1990 	 | Male   	|
+| Def FN 	 | Def LN 	 | 0456456456 | Abcd1234 | 01 		| Feb 		 | 1990 	 | Female   |
+| Xyz FN 	 | Xyz LN 	 | 0789789789 | Pass2018 | 01 		| Mar 		 | 1990 	 | Female   |
+
+code :
+@Given("^I open Facebook URL and create new accounts with below data$")
+public void i_open_Facebook_URL_and_create_new_accounts_with_below_data(DataTable dt) {
+	List<Map<String, String>> list = dt.asMaps(String.class, String.class);
+	for(int i=0; i<list.size(); i++) {
+		System.out.println(list.get(i).get("First Name"));
+		System.out.println(list.get(i).get("Last Name"));
+	}
+}
+
+or
+
+@Given("^I open Facebook URL and create new accounts with below data$")
+public void i_open_Facebook_URL_and_create_new_accounts_with_below_data(DataTable dt) {
+	List<List<String>> list = dt.asLists(String.class);
+	for(int i=1; i<list.size(); i++) { //i starts from 1 because i=0 represents the header
+		System.out.println(list.get(i).get(0));
+		System.out.println(list.get(i).get(1));
+	}
+}
+============
+hooks : only 2 hooks in cucumber
+@Before , @After  : will run for all scenarios in a feature file.
+These hooks Will also executes for all examples in case of scenario outline.(Again, in cucumber every example is considered as a separate scenario.)
+
+tagged hooks :
+@Before("@SmokeTesting") // or @Before(value={"@SmokeTesting"})
+    public void beforeSecond(){
+        System.out.println("This will run only before the SmokeTesting tag Scenarios");
+    }
+
+--> I just combined the @Before(“First”) and @Before(“Third”) by @Before(“@First, @Third”). So in this way we do not need have two different hooks logic.
+
+
+execution order hooks :
+@Before(order=0) 0 executes first and then 1 for before
+@Before(order=1)
+@After(order=1) 1 executes first in case of upper and then 0
+@After(order=0)  after method is opposite, upper order number execute first then execute the lower order number.
+
+ex : @Before(order=5,value={"@tag1"}) // both order and tagged hooks
+
+
